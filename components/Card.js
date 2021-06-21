@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { StarIcon } from "@heroicons/react/solid";
+import { ClockIcon } from "@heroicons/react/outline";
+
 export default function Card({ recipe }) {
   const { title, slug, cookingTime, thumbnail, details } = recipe.fields;
   const router = useRouter();
@@ -11,69 +14,39 @@ export default function Card({ recipe }) {
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
   return (
-    <div class="bg-white shadow-md  hover:shadow-lg rounded-3xl p-4 min-w-full mx-auto">
-      <div class="flex-none lg:flex">
-        <div class=" h-full w-full lg:h-32 lg:w-32">
-          <Image
-            class=" w-full  object-scale-down lg:object-cover  lg:h-48 rounded-2xl"
-            src={"https:" + thumbnail?.fields?.file?.url}
-            width={thumbnail.fields.file.details.image.width}
-            height={thumbnail.fields.file.details.image.height}
-          />
-        </div>
-        <div class="flex-auto ml-3 justify-evenly ">
-          <div class="flex flex-wrap ">
-            <h2 class="flex-auto text-lg font-medium">
-              <Link href={"/recipes/" + slug}>{title}</Link>
-            </h2>
-          </div>
-          <p className=" mt-2 text-gray-500"> {details}</p>
-          <div class="flex py-2  text-sm text-gray-600  flex-col">
-            <div class="flex-auto flex space-x-3 mb-2">
-              <button class="mb-2 md:mb-0  px-2 py-2 shadow-sm  text-gray-600 rounded-full bg-gray-50 inline-flex items-center space-x-2 ">
-                {Array(rating)
-                  .fill()
-                  .map((_, index) => (
-                    <svg
-                      class="mx-1 w-4 h-4 fill-current text-yellow-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
-              </button>
-            </div>
-            <div class="flex-1 inline-flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-2 text-red-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                ></path>
-              </svg>
-              <p class="">{cookingTime} mins to cook</p>
-            </div>
-          </div>
-          <div class="flex pb-2 border-t border-gray-200 "></div>
-          <div class="flex space-x-3 text-sm font-medium">
-            <button
-              onClick={() => router.push("/recipes/" + slug)}
-              class="mb-2 md:mb-0 bg-red-400 px-5 py-2 shadow-sm  text-white rounded-full hover:bg-red-900 "
-              type="button"
-            >
-              Let's Cook
-            </button>
-          </div>
-        </div>
+    <div className=" shadow-md flex flex-col p-10 m-5 bg-white rounded-lg">
+      <Image
+        src={"https:" + thumbnail?.fields?.file?.url}
+        width={400}
+        height={400}
+        objectFit="contain"
+        className="rounded-md"
+      />
+      <h4 className="my-3 font-semibold">
+        <Link href={"/recipes/" + slug}>{title}</Link>
+      </h4>
+      <p className="my-2 text-xs ">{details}</p>
+      <div className="flex">
+        {Array(rating)
+          .fill()
+          .map((_, i) => (
+            <p key={i.toString()}>
+              <StarIcon className="h-5 text-yellow-500" />
+            </p>
+          ))}
       </div>
+      <div className="mb-5">
+        <p className=" flex items-center font-normal">
+          <ClockIcon class="h-5 w-5 mr-2 text-yummy-bg " />
+          <p className="font-medium">{cookingTime} mins&nbsp; </p>
+        </p>
+      </div>
+      <button
+        onClick={() => router.push("/recipes/" + slug)}
+        className="mt-auto text-white bg-yummy-bg p-2 rounded-lg focus:outline-none focus:ring hover:bg-red-700 focus:ring-red-600 focus:ring-opacity-50"
+      >
+        Let's Cook
+      </button>
     </div>
   );
 }
