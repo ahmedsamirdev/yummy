@@ -22,7 +22,7 @@ export default function Card({ recipe }) {
         objectFit="contain"
         className="rounded-md"
       />
-      <h4 className="my-3 font-semibold">
+      <h4 className="my-3 font-bold antialiased sm:subpixel-antialiased md:antialiased">
         <Link href={"/recipes/" + slug}>{title}</Link>
       </h4>
       <p className="my-2 text-xs ">{details}</p>
@@ -36,7 +36,7 @@ export default function Card({ recipe }) {
           ))}
       </div>
       <div className="mb-5">
-        <p className=" flex items-center font-normal">
+        <p className=" flex items-center ">
           <ClockIcon class="h-5 w-5 mr-2 text-yummy-bg " />
           <p className="font-medium">{cookingTime} mins&nbsp; </p>
         </p>
