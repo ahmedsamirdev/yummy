@@ -20,14 +20,15 @@ export async function getStaticProps() {
 }
 
 export default function Recipes({ recipes }) {
-  console.log(recipes);
   return (
-    <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
+    <>
       {/* <Banner /> */}
       {/* <Hero /> */}
-      {recipes.map((recipe) => (
-        <RecipeCard key={recipe.sys.id} recipe={recipe} />
-      ))}
-    </div>
+      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-8">
+        {recipes.map((recipe) => (
+          <RecipeCard key={recipe.sys.id} recipe={recipe} />
+        ))}
+      </div>
+    </>
   );
 }
