@@ -37,7 +37,7 @@ export default function Card({ recipe }) {
       </div>
       <div className="mb-5">
         <p className=" flex items-center ">
-          <ClockIcon class="h-5 w-5 mr-2 text-yummy-bg " />
+          <ClockIcon className="h-5 w-5 mr-2 text-yummy-bg " />
           <p className="font-medium">{cookingTime} mins&nbsp; </p>
         </p>
       </div>
