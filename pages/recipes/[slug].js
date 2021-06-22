@@ -62,7 +62,7 @@ export default function RecipeDetails({ recipe }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="bg-white max-w-7xl mx-auto shadow overflow-hidden sm:rounded-lg">
+      <div className="bg-white max-w-7xl my-6 border-2 border-gray-100		 mx-auto shadow-lg overflow-hidden sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6">
           <h3 className="text-lg leading-6 font-medium flex items-center justify-center md:justify-start lg:justify-start text-gray-900">
             {title}
