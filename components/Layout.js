@@ -10,7 +10,7 @@ export default function Layout({ children }) {
 
       <div className="page-content">{children}</div>
 
-      <footer>{/* <Footer /> */}</footer>
+      <footer><Footer /> </footer>
     </div>
   );
 }

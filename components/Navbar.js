@@ -9,7 +9,7 @@ export default function Example() {
     
           <img
             className=" h-12 w-auto fill-current text-white"
-            src="../test.png"
+            src="../logo.png"
           /></div>
         </a>
       </Link>

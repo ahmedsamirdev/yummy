@@ -127,7 +127,7 @@ export default function RecipeDetails({ recipe }) {
                 <ViewListIcon className="h-5 w-5 mr-2 text-yummy-bg " />
                 Method:
               </dt>
-              <dd className="mt-1 text-md flex flex-col text-gray-900 sm:mt-0 sm:col-span-2">
+              <dd className="prose mt-1 text-md flex flex-col text-gray-900 sm:mt-0 sm:col-span-2">
                 {documentToReactComponents(directions)}
               </dd>
             </div>
@@ -153,11 +153,6 @@ export default function RecipeDetails({ recipe }) {
                   />
                   <Image
                     src={"https:" + featuredImage[2].fields.file.url}
-                    width={250}
-                    height={250}
-                  />
-                  <Image
-                    src={"https:" + featuredImage[3].fields.file.url}
                     width={250}
                     height={250}
                   />
