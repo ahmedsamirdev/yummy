@@ -14,7 +14,7 @@ export default function Card({ recipe }) {
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
   return (
-    <div className=" shadow-md flex flex-col p-10 m-5 bg-white rounded-lg">
+    <div className="flex flex-col p-10 m-5 bg-white rounded-lg shadow-md ">
       <Image
         src={"https:" + thumbnail?.fields?.file?.url}
         width={400}
@@ -22,8 +22,10 @@ export default function Card({ recipe }) {
         objectFit="contain"
         className="rounded-md"
       />
-      <h4 className="my-3 font-bold antialiased sm:subpixel-antialiased md:antialiased">
-        <Link href={"/recipes/" + slug}>{title}</Link>
+      <h4 className="my-3 antialiased font-bold sm:subpixel-antialiased md:antialiased">
+        <Link href={"/recipes/" + slug}>
+          <a> {title}</a>
+        </Link>
       </h4>
       <p className="my-2 text-xs ">{details}</p>
       <div className="flex">
@@ -36,14 +38,14 @@ export default function Card({ recipe }) {
           ))}
       </div>
       <div className="mb-5">
-        <p className=" flex items-center ">
-          <ClockIcon className="h-5 w-5 mr-2 text-yummy-bg " />
+        <span className="flex items-center ">
+          <ClockIcon className="w-5 h-5 mr-2 text-yummy-bg " />
           <p className="font-medium">{cookingTime} mins&nbsp; </p>
-        </p>
+        </span>
       </div>
       <button
         onClick={() => router.push("/recipes/" + slug)}
-        className="mt-auto text-white bg-yummy-bg p-2 rounded-lg focus:outline-none focus:ring hover:bg-red-700 focus:ring-red-600 focus:ring-opacity-50"
+        className="p-2 mt-auto text-white rounded-lg bg-yummy-bg focus:outline-none focus:ring hover:bg-red-700 focus:ring-red-600 focus:ring-opacity-50"
       >
         Let's Cook
       </button>

@@ -1,16 +1,10 @@
 import Hero from "../components/Hero";
-import Banner from "../components/Banner";
 import { createClient } from "contentful";
 import RecipeCard from "../components/RecipeCard";
 import Head from "next/head";
 import {
-  Link,
-  DirectLink,
   Element,
-  Events,
   animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from "react-scroll";
 
 export async function getStaticProps() {
@@ -35,19 +29,18 @@ export default function Recipes({ recipes }) {
       <Head>
         <title>Yummy | Food Recipes Blog</title>
       </Head>
-      {/* <Banner /> */}
       <Hero />
       <Element name="test1" className="element">
-        <div className=" container mx-auto mt-10">
+        <div className="container mx-auto mt-10 ">
           <p
             id="trending"
-            className=" text-black xl:inline ml-4 text-4xl tracking-tight font-bold  sm:text-4xl md:text-4xl"
+            className="ml-4 text-4xl font-bold tracking-tight text-black xl:inline sm:text-4xl md:text-4xl"
           >
             Trending this week
           </p>
         </div>
       </Element>
-      <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-6 gap-6">
+      <div className="container grid gap-6 pt-6 mx-auto sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {recipes.map((recipe) => (
           <RecipeCard key={recipe.sys.id} recipe={recipe} />
         ))}

@@ -62,12 +62,12 @@ export default function RecipeDetails({ recipe }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="bg-white max-w-7xl my-6 border-2 border-gray-100		 mx-auto shadow-lg overflow-hidden sm:rounded-lg">
+      <div className="mx-auto my-6 overflow-hidden bg-white border-2 border-gray-100 shadow-lg max-w-7xl sm:rounded-lg">
         <div className="px-4 py-5 sm:px-6">
-          <h3 className="text-lg leading-6 font-medium flex items-center justify-center md:justify-start lg:justify-start text-gray-900">
+          <h3 className="flex items-center justify-center text-lg font-medium leading-6 text-gray-900 md:justify-start lg:justify-start">
             {title}
           </h3>
-          <p className="mt-1 max-w-2xl text-sm py-2 pb-4 text-gray-500">
+          <p className="max-w-2xl py-2 pb-4 mt-1 text-sm text-gray-500">
             {details}
           </p>
           <Image
@@ -79,68 +79,67 @@ export default function RecipeDetails({ recipe }) {
         </div>
         <div className="border-t border-gray-200">
           <dl>
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500 flex items-start">
-                {" "}
-                <ClockIcon className="h-5 w-5 mr-2 text-yummy-bg " /> Take about
+            <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="flex items-start text-sm font-medium text-gray-500">
+                <ClockIcon className="w-5 h-5 mr-2 text-yummy-bg " /> Take about
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {cookingTime} mins to cook.
               </dd>
             </div>
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500 flex items-start">
-                <ClockIcon className="h-5 w-5 mr-2 text-yummy-bg " /> Prepare
+            <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="flex items-start text-sm font-medium text-gray-500">
+                <ClockIcon className="w-5 h-5 mr-2 text-yummy-bg " /> Prepare
                 time
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {preparation} min.
               </dd>
             </div>
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500 flex items-start">
-                <UserGroupIcon className="h-5 w-5 mr-2 text-yummy-bg " /> Serve
+            <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="flex items-start text-sm font-medium text-gray-500">
+                <UserGroupIcon className="w-5 h-5 mr-2 text-yummy-bg " /> Serve
               </dt>
               <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {servings} people.
               </dd>
             </div>
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500 flex  items-start">
-                <ScaleIcon className="h-5 w-5 mr-2 text-yummy-bg " />
+            <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="flex items-start text-sm font-medium text-gray-500">
+                <ScaleIcon className="w-5 h-5 mr-2 text-yummy-bg " />
                 Ingredients:
               </dt>
-              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 flex flex-col sm:col-span-2">
+              <dd className="flex flex-col mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {ingredients.map((ingredient) => (
-                  <label key={ingredient} className=" items-center ">
+                  <label key={ingredient} className="items-center ">
                     <input
                       type="checkbox"
-                      className=" rounded-sm focus:ring-2  h-4 w-4 text-red-400 focus:ring-red-200 focus:ring-opacity-50"
+                      className="w-4 h-4 text-red-400 rounded-sm focus:ring-2 focus:ring-red-200 focus:ring-opacity-50"
                     />
                     <span className="ml-2 ">{ingredient}</span>
                   </label>
                 ))}
               </dd>
             </div>
-            <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500  flex items-start">
-                <ViewListIcon className="h-5 w-5 mr-2 text-yummy-bg " />
+            <div className="px-4 py-5 bg-gray-50 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="flex items-start text-sm font-medium text-gray-500">
+                <ViewListIcon className="w-5 h-5 mr-2 text-yummy-bg " />
                 Method:
               </dt>
-              <dd className="prose mt-1 text-md flex flex-col text-gray-900 sm:mt-0 sm:col-span-2">
+              <dd className="flex flex-col mt-1 prose text-gray-900 text-md sm:mt-0 sm:col-span-2">
                 {documentToReactComponents(directions)}
               </dd>
             </div>
-            <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt className="text-sm font-medium text-gray-500 flex items-start ">
-                <PhotographIcon className="h-5 w-5 mr-2 text-yummy-bg " />{" "}
+            <div className="px-4 py-5 bg-white sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt className="flex items-start text-sm font-medium text-gray-500 ">
+                <PhotographIcon className="w-5 h-5 mr-2 text-yummy-bg " />{" "}
                 Photos
               </dt>
-              <dd className="mt-1 text-sm  text-gray-900 sm:mt-0 sm:col-span-2">
+              <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                 {/* {featuredImage.forEach((image) => {
                   <img src={`"https:" + ${image}`} className="fdsf" />;
                 })} */}
-                <div className="grid md:grid-flow-col gap-4">
+                <div className="grid gap-4 md:grid-flow-col">
                   <Image
                     src={"https:" + featuredImage[0].fields.file.url}
                     width={250}
