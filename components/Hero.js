@@ -13,16 +13,7 @@ export default function Example() {
           >
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
-          <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
-            <nav
-              className="relative flex items-center justify-between sm:h-10 lg:justify-start"
-              aria-label="Global"
-            >
-              <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-                <div className="flex items-center justify-between w-full md:w-auto"></div>
-              </div>
-            </nav>
-          </div>
+          <div className="relative px-4 pt-6 sm:px-6 lg:px-8"/>
           <main className="px-4 mx-auto mt-10 max-w-7xl sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-6xl">
